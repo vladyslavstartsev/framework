@@ -81,7 +81,7 @@ class Composer
      */
     protected function getProcess()
     {
-        return (new Process('', $this->workingPath))->setTimeout(null);
+        return Process::fromShellCommandline('', $this->workingPath)->setTimeout(null);
     }
 
     /**

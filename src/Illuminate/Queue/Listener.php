@@ -114,13 +114,7 @@ class Listener
             $command = $this->addEnvironment($command, $options);
         }
 
-        return new Process(
-            $command,
-            $this->commandPath,
-            null,
-            null,
-            $options->timeout
-        );
+        return Process::fromShellCommandline($command, $this->commandPath, null, null, $options->timeout);
     }
 
     /**
